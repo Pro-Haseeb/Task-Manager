@@ -1,4 +1,4 @@
-body {
+.project-body {
   background: #f4f4f4;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -6,7 +6,9 @@ body {
   align-items: flex-start;
   min-height: 100vh;
   padding-top: 40px;
-  transition: "background 1.5s ease";
+  /* transition: "background 1.5s ease";
+   */
+  /* margin-top: 5vh; */
   
 }
 
@@ -16,8 +18,53 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  margin-left: 33vw;
-  margin-top: 10vh;
+  margin: 10vh auto;  /* Center horizontally */
+}
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .task-container {
+    width: 92%;
+    padding: 15px;
+    margin-top: 8vh;
+  }
+
+  input,
+  button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .add-btn,
+  .show-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .task-container {
+    width: 94%;
+    padding: 12px;
+    margin-top: 6vh;
+  }
+
+  input,
+  button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .task span:first-child {
+    font-size: 15px;
+  }
+
+  .btn-group button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
 }
 
 h1 {
@@ -41,6 +88,11 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 6px;
   outline: none;
+  
+}
+
+.task-controls label{
+  color: #003b95;
 }
 
 

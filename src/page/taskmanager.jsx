@@ -20,7 +20,7 @@ const Taskmanager = () => {
     // bgRef.current.style.transition = "background 1.5s ease";
    const interval = setInterval(() => {
     // bgRef.current.style.transition = "background 1.5s ease";
-    // if(bgRef.current)
+    if(bgRef.current)
     bgRef.current.style.background = gradient[index];
     
 
@@ -82,7 +82,7 @@ const Taskmanager = () => {
   return (
     
     <>
-    
+    <div className="project-body" ref={bgRef}>
    
     <div className="task-container" >
       <h1>Task Manager</h1>
@@ -148,6 +148,7 @@ const Taskmanager = () => {
       </div>
 }
 
+    </div>
     </div>
     </>
     
