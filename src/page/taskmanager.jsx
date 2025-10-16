@@ -71,15 +71,14 @@ const Taskmanager = () => {
     return task;
   });
 
-  const date = new Date().toISOString().split("T")[0];
+  // const date = new Date().toISOString().split("T")[0];
 
   return (
     
-    <body
-    ref={bgRef}
-    >
-       
-    <div className="task-container">
+    <>
+    
+   
+    <div className="task-container" >
       <h1>Task Manager</h1>
 
       <div className="task-controls">
@@ -91,9 +90,9 @@ const Taskmanager = () => {
         />
         <br />
         <label htmlFor="startDate"> Start Date</label>
-        <input type="date" min={date}  onChange={(e)=>(setStarttDate(e.target.value))} /> 
+        <input type="date"   onChange={(e)=>(setStarttDate(e.target.value))} /> 
         <label htmlFor="endDate">End Date</label>
-        <input type="date" min={date}  onChange={(e)=>(setEndDate(e.target.value))} />
+        <input type="date"   onChange={(e)=>(setEndDate(e.target.value))} />
         <br />
         <button className="add-btn" onClick={addTask}>
           Add Task
@@ -144,7 +143,7 @@ const Taskmanager = () => {
 }
 
     </div>
-    </body>
+    </>
     
   );
 };
