@@ -17,9 +17,10 @@ const Taskmanager = () => {
    ]
 
    let index =0;
-    bgRef.current.style.transition = "background 1.5s ease";
+    // bgRef.current.style.transition = "background 1.5s ease";
    const interval = setInterval(() => {
     // bgRef.current.style.transition = "background 1.5s ease";
+    // if(bgRef.current)
     bgRef.current.style.background = gradient[index];
     
 
@@ -44,11 +45,16 @@ const Taskmanager = () => {
   }, [task]);
 
   const addTask = () => {
+    if(startDate<endDate){
     if (!text.trim()) return; 
     
     const newTask = { id: Date.now(), text, done: false, startDate, endDate };
     setTask([...task, newTask]);
     setText("");
+    }
+    else{
+      alert("Date is not correct!!!")
+    }
     
   
   };
@@ -71,7 +77,7 @@ const Taskmanager = () => {
     return task;
   });
 
-  // const date = new Date().toISOString().split("T")[0];
+  const date = new Date().toISOString().split("T")[0];
 
   return (
     
@@ -90,9 +96,9 @@ const Taskmanager = () => {
         />
         <br />
         <label htmlFor="startDate"> Start Date</label>
-        <input type="date"   onChange={(e)=>(setStarttDate(e.target.value))} /> 
+        <input type="date" min={date}  onChange={(e)=>(setStarttDate(e.target.value))} /> 
         <label htmlFor="endDate">End Date</label>
-        <input type="date"   onChange={(e)=>(setEndDate(e.target.value))} />
+        <input type="date" min={date}  onChange={(e)=>(setEndDate(e.target.value))} />
         <br />
         <button className="add-btn" onClick={addTask}>
           Add Task
