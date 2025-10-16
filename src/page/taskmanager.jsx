@@ -74,7 +74,7 @@ const Taskmanager = () => {
   const date = new Date().toISOString().split("T")[0];
 
   return (
-    <>
+    
     <body
     ref={bgRef}
     >
@@ -145,7 +145,7 @@ const Taskmanager = () => {
 
     </div>
     </body>
-    </>
+    
   );
 };
 
